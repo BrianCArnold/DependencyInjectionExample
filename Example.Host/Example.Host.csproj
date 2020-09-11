@@ -2,6 +2,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Example.Interfaces\Example.Interfaces.csproj" />
+    <ProjectReference Include="..\Example.FileAccess\Example.FileAccess.csproj" />
+    <ProjectReference Include="..\Example.Injection\Example.Injection.csproj" />
+    <ProjectReference Include="..\Example.Logging\Example.Logging.csproj" />
+    <ProjectReference Include="..\Example.SqlAccess\Example.SqlAccess.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -23,6 +23,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+/[Oo]utput/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -174,8 +175,8 @@ publish/
 # Note: Comment the next line if you want to checkin your web deploy settings,
 
 # but database connection strings (with potential passwords) will be unencrypted
-*.pubxml
-*.publishproj
+#*.pubxml
+#*.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
 

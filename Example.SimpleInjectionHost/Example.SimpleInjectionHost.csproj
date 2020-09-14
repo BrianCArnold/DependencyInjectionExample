@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Example.Injection\Example.Injection.csproj" />
     <ProjectReference Include="..\Example.Interfaces\Example.Interfaces.csproj" />
     <ProjectReference Include="..\Example.FileAccess\Example.FileAccess.csproj" />
     <ProjectReference Include="..\Example.Logging\Example.Logging.csproj" />

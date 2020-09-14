@@ -5,6 +5,7 @@ using Example.Models;
 
 namespace Example.SqlAccess
 {
+    [InjectableImplementation]
     public class EntityFrameworkMockClass : ISqlAccess
     {
         public ICollection<Product> Products { get; set; } = new List<Product>();

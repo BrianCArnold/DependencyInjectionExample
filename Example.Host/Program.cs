@@ -47,8 +47,17 @@ namespace Example.Host
                     }
                 }
             }).Build();
+            var sqlAccess = host.Services.GetService<ISqlAccess>();
+            if (sqlAccess != null)
+            {
+                Console.WriteLine("sql access implementation created");
+            }
+            else 
+            {
+                Console.WriteLine("sql access implementation not created");
+            }
             //Recursively injects required constructor parameters and starts the 
-            host.Run();
+            // host.Run();
         }
     }
 }

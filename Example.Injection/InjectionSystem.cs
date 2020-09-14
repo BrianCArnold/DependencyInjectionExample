@@ -11,7 +11,7 @@ namespace Example.Injection
     {
         public static IEnumerable<Assembly> CurrentlyLoadedAssemblies() => 
             AppDomain.CurrentDomain.GetAssemblies()
-                .Where(a => a.FullName?.Contains(".dll") ?? false).ToArray();
+                .Where(a => a.Location?.Contains(".dll") ?? false).ToArray();
         static InjectionSystem()
         {
             var currentAssemblies = CurrentlyLoadedAssemblies();
@@ -19,7 +19,7 @@ namespace Example.Injection
             {
                 if (!currentAssemblies.Any(a => a.Location == posA.FullName))
                 {
-                    AppDomain.CurrentDomain.Load(new AssemblyName(posA.FullName));
+                    AppDomain.CurrentDomain.Load(Assembly.LoadFile(posA.FullName).FullName);
                 }
             }
         }

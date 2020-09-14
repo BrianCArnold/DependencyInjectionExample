@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.SqlAccess", "Exampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Models", "Example.Models\Example.Models.csproj", "{6DB7C689-FB79-4251-8F9D-155E2A0EFD2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.CounterServices", "Example.CounterServices\Example.CounterServices.csproj", "{3D61C508-F790-4542-927E-3A05766D8D4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,5 +116,17 @@ Global
 		{6DB7C689-FB79-4251-8F9D-155E2A0EFD2E}.Release|x64.Build.0 = Release|Any CPU
 		{6DB7C689-FB79-4251-8F9D-155E2A0EFD2E}.Release|x86.ActiveCfg = Release|Any CPU
 		{6DB7C689-FB79-4251-8F9D-155E2A0EFD2E}.Release|x86.Build.0 = Release|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Debug|x64.Build.0 = Debug|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Debug|x86.Build.0 = Debug|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Release|x64.ActiveCfg = Release|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Release|x64.Build.0 = Release|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Release|x86.ActiveCfg = Release|Any CPU
+		{3D61C508-F790-4542-927E-3A05766D8D4B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

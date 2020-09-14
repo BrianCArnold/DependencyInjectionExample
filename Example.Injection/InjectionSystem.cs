@@ -19,7 +19,7 @@ namespace Example.Injection
             {
                 if (!currentAssemblies.Any(a => a.Location == posA.FullName))
                 {
-                    AppDomain.CurrentDomain.Load(Assembly.LoadFile(posA.FullName).FullName);
+                    Assembly.LoadFile(posA.FullName);
                 }
             }
         }

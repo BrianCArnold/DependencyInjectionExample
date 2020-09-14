@@ -6,6 +6,7 @@
     <ProjectReference Include="..\Example.Injection\Example.Injection.csproj" />
     <ProjectReference Include="..\Example.Logging\Example.Logging.csproj" />
     <ProjectReference Include="..\Example.SqlAccess\Example.SqlAccess.csproj" />
+    <ProjectReference Include="..\Example.CounterServices\Example.CounterServices.csproj" />
   </ItemGroup>
 
   <ItemGroup>

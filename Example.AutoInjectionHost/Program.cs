@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Reflection;
 using Example.Injection;
 using Example.Interfaces;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Example.Host
+namespace Example.AutoInjectionHost
 {
     class Program
     {
@@ -23,6 +24,8 @@ namespace Example.Host
                     .AddJsonFile("appsettings.json", optional: true);
             }).ConfigureServices((builder, services) => 
             {
+                    //Adds a Digest Provider
+                services.AddScoped<HashAlgorithm, SHA512Managed>();
                 var injectableInterfaces = InjectionSystem.CurrentlyLoadedAssemblies()
                     .GetTypesWithAttribute<InjectableInterfaceAttribute>();
                 var injectableImplementations = InjectionSystem.CurrentlyLoadedAssemblies()

@@ -1,11 +1,12 @@
 using Example.Interfaces;
 using Microsoft.Extensions.Configuration;
 
-namespace Example.SimpleInjectionHost
+namespace Example.AutoInjectionHost
 {
     [InjectableImplementation]
     public class CustomConfiguration : ICustomConfiguration
     {
+
         public CustomConfiguration(IConfiguration config)
         {
             config.Bind(this);

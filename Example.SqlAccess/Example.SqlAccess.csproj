@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Example.Interfaces\Example.Interfaces.csproj" />
+    <ProjectReference Include="..\Example.Models\Example.Models.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

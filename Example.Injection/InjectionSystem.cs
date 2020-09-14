@@ -23,10 +23,6 @@ namespace Example.Injection
                 }
             }
         }
-        public static IEnumerable<Assembly> GetAssembliesWithAttribute<TAttribute>(this IEnumerable<Assembly> assemblies) 
-            where TAttribute : Attribute =>
-            assemblies
-                .Where(a => a.GetCustomAttribute<TAttribute>() != null);
         public static IEnumerable<Type> GetTypesWithAttribute<TAttribute>(this IEnumerable<Assembly> assemblies)
             where TAttribute : Attribute =>
                 assemblies.SelectMany(a => 
@@ -39,5 +35,7 @@ namespace Example.Injection
         public static IEnumerable<Type> GetInjectionProviderTypes() => 
             CurrentlyLoadedAssemblies()
             .GetTypesWithAttribute<InjectableImplementationAttribute>();
+        
+        
     }
 }

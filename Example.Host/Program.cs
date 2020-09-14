@@ -30,6 +30,10 @@ namespace Example.Host
                 foreach (var injectableInterface in injectableInterfaces)
                 {
                     var matchingTypes = injectableImplementations.Where(t => injectableInterface.IsAssignableFrom(t));
+                    if (matchingTypes.Count() == 0)
+                    {
+                        Console.Error.WriteLine($"Could not find injectable implementation for {injectableInterface.FullName}.");
+                    }
                     foreach (var matchingType in matchingTypes)
                     {
                         if (typeof(ICustomService).IsAssignableFrom(matchingType))

@@ -6,7 +6,7 @@ namespace Example.Host
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }

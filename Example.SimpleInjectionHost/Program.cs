@@ -31,7 +31,7 @@ namespace Example.SimpleInjectionHost
                     //Adds the Custom Logger as an implementation of ICustomLogger.
                     .AddScoped<ICustomLogger, ConsoleLogger>()
                     //Adds a Mock of what an EntityFramework context might look like.
-                    .AddScoped<ISqlAccess, EntityFrameworkMockAccess>()
+                    .AddScoped<ISqlAccess, SqlMockAccess>()
                     //Adds a Custom Configuration Mapping
                     .AddScoped<ICustomConfiguration, CustomConfiguration>()
                     //Adds a File Access Provider

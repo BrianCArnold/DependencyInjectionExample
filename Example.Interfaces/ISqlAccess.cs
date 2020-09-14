@@ -7,7 +7,8 @@ namespace Example.Interfaces
     [InjectableInterface]
     public interface ISqlAccess
     {
-        ICollection<Product> Products { get; set; }
-        ICollection<Supplier> Suppliers { get; set; }
+        IEnumerable<FileData> GetFiles();
+        string GetFileHash(string fileName);
+        void SetFileHash(string fileName, string hash);
     }
 }

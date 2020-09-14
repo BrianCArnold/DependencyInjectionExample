@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reactive.Linq;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using Example.Interfaces;
+using Example.Models;
 
 namespace Example.CounterServices
 {
@@ -14,12 +16,13 @@ namespace Example.CounterServices
         private IDisposable Counter;
         public ICustomLogger Logger { get; }
         public IFileAccessProvider FileProvider { get; }
-        public Dictionary<string, string> FileHashes = new Dictionary<string, string>();
+        public ISqlAccess Sql { get; }
 
-        public FileChangeMonitorService(ICustomLogger logger, IFileAccessProvider fileProvider)
+        public FileChangeMonitorService(ICustomLogger logger, IFileAccessProvider fileProvider, ISqlAccess sql)
         {
             Logger = logger;
             FileProvider = fileProvider;
+            Sql = sql;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -36,21 +39,22 @@ namespace Example.CounterServices
 
         private IEnumerable<string> CheckForChangedFiles()
         {
-            var files = FileProvider.GetFileNames();
+            var files = FileProvider.GetFileNames().ToArray();
+            var existingFileInfo = Sql.GetFiles();
             foreach(var file in files)
             {
-                if (!FileHashes.ContainsKey(file))
+                if (!existingFileInfo.Any(fi => fi.Name == file))
                 {
-                    FileHashes.Add(file, FileProvider.FileDigest(file));
+                    Sql.SetFileHash(file, FileProvider.FileDigest(file));
                     yield return file;
                 }
                 else 
                 {
                     var newHash = FileProvider.FileDigest(file);
-                    var oldHash = FileHashes[file];
+                    var oldHash = Sql.GetFileHash(file);
                     if (newHash != oldHash)
                     {
-                        FileHashes[file] = newHash;
+                        Sql.SetFileHash(file, newHash);
                         yield return file;
                     }
                 }
